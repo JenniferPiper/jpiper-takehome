@@ -12,3 +12,44 @@ body {
 .jpt-menu-panel {
   border: thin dotted lime;
 }
+  .jpt-menu-toggle{
+    display: inline-block;
+    margin:0;
+    padding: 0;
+
+    &:focus {
+        outline: none;
+    }
+    .icon-bar{
+        display: block;
+        width: 48px;
+        height: 6px;
+        border-radius: 2px;
+        background-color: #000;
+        transition: all 0.3s;
+    }
+    .top-bar {
+        margin-bottom: 4px;
+        transform: rotate(45deg);
+        transform-origin: 20% 50%;
+    }
+    .middle-bar {                 
+        margin-bottom: 4px;
+        opacity: 0;
+    }
+    .bottom-bar {
+        transform: rotate(-45deg);
+        transform-origin: 20% 50%;
+    }
+    &.closed{
+        .top-bar {
+            transform: rotate(0);
+        }
+        .middle-bar {
+            opacity: 1;
+        }
+        .bottom-bar {
+            transform: rotate(0);
+        }
+    }
+  }
