@@ -5,6 +5,16 @@ body {
   margin-right: auto;
 }
 
+.jpt-header {
+  border: thin solid blue;
+  padding: 1rem;
+  h1 {
+    display: inline-block;
+    margin: 0;
+    line-height: 1em;
+  }
+}
+
 .jpt-menu {
   border: thin solid magenta;
 }
@@ -13,16 +23,16 @@ body {
   border: thin dotted lime;
 }
   .jpt-menu-toggle{
-    display: inline-block;
-    margin:0;
-    padding: 0;
+    height: 30px;
+    float: right;
+    border: none;
 
     &:focus {
         outline: none;
     }
     .icon-bar{
         display: block;
-        width: 48px;
+        width: 35px;
         height: 6px;
         border-radius: 2px;
         background-color: #000;
@@ -32,6 +42,7 @@ body {
         margin-bottom: 4px;
         transform: rotate(45deg);
         transform-origin: 20% 50%;
+        transform-origin: 0 85%;
     }
     .middle-bar {                 
         margin-bottom: 4px;

@@ -13,11 +13,16 @@ class MenuToggle extends Component {
 
   handleClick(event) {
     event.preventDefault();
-    console.log('toggle clicked');
     if (this.state.menuOpen) {
-      this.setState({ menuOpen: false });
+      this.setState({ 
+        menuOpen: false,
+        menuToggleClassName: 'jpt-menu-toggle closed',
+      });
     } else {
-      this.setState({ menuOpen: true });
+      this.setState({ 
+        menuOpen: true,
+        menuToggleClassName: 'jpt-menu-toggle open',
+      });
     }
   }
 
