@@ -1,17 +1,31 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import MenuPanel from '../menu-panel/menu-panel.jsx';
+import MenuItem from '../menu-item/menu-item.jsx';
 
-const Menu = () => (
-  <nav className='jpt-menu'>MENU GOES HERE
-  <MenuPanel />
-  <MenuPanel />
-  <MenuPanel />
-  </nav>
-);
+class Menu extends Component {
+  render() { 
+    console.log('Menu this.props: ', this.props);
+    let menuJSX;
+    if (this.props.menuOpen) {
+      menuJSX = <nav className='jpt-menu open'>
+        <MenuItem />
+        <MenuItem />
+        <MenuItem />
+        </nav>;
+    } else {
+      menuJSX = <nav className='jpt-menu closed'>MENU CLOSED</nav>;
+    }
+    return (
+      <Fragment>
+      { menuJSX }
+      </Fragment>
+    );
+  }
+}
+
 
 Menu.propTypes = {
-  title: PropTypes.string,
+  menuOpen: PropTypes.bool,
 };
 
 export default Menu;

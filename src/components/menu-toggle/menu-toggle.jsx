@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
+import Menu from '../menu/menu.jsx';
 
 class MenuToggle extends Component {
   constructor(props) {
@@ -28,6 +29,7 @@ class MenuToggle extends Component {
 
   render() { 
     return (
+      <Fragment>
       <button 
       className={this.state.menuToggleClassName}
       onClick={this.handleClick}>
@@ -35,6 +37,10 @@ class MenuToggle extends Component {
       <span className="icon-bar middle-bar"></span>
       <span className="icon-bar bottom-bar"></span>
       </button>
+      <Menu 
+      menuOpen={this.state.menuOpen}
+      />
+      </Fragment>
     );
   }
 }
