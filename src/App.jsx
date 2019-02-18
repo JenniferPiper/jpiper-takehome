@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
     <Fragment>
-    <Header title="J. Piper TakeHome" />
+    <Header title="J. Piper" />
     </Fragment>
     );
   }

@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import MenuPanel from '../menu-panel/menu-panel.jsx';
 
 const MenuItem = () => (
-  <div className='jpt-menu-item'>MENU ITEM
+  <div className='jpt-menu-item'>
+    <p>MENU ITEM</p>
   <MenuPanel /></div>
 );
 

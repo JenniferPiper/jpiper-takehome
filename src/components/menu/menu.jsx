@@ -5,24 +5,21 @@ import MenuItem from '../menu-item/menu-item.jsx';
 class Menu extends Component {
   render() { 
     console.log('Menu this.props: ', this.props);
-    let menuJSX;
+    let menuClass;
     if (this.props.menuOpen) {
-      menuJSX = <nav className='jpt-menu open'>
-        <MenuItem />
-        <MenuItem />
-        <MenuItem />
-        </nav>;
+      menuClass = 'jpt-menu open';
     } else {
-      menuJSX = <nav className='jpt-menu closed'>
-        <MenuItem />
-        <MenuItem />
-        <MenuItem />
-        </nav>;
+      menuClass = 'jpt-menu closed';
     }
     return (
-      <Fragment>
-      { menuJSX }
-      </Fragment>
+      <nav
+        className = {menuClass}
+        >
+      <MenuItem />
+      <MenuItem />
+      <MenuItem />
+      <MenuItem />
+      </nav>
     );
   }
 }

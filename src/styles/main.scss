@@ -5,8 +5,9 @@ $blue3: #5b96c4;
 $black: #000;
 $white: #fff;
 
+$text-color: $white;
+
 body {
-  border: thin solid cyan;
   position: relative;
   max-width: 600px;
   margin-left: auto;
@@ -15,17 +16,24 @@ body {
 
 #app {
   background-color: $blue1;
-  color: $white;
+  color: $text-color;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
 }
 
 .jpt-header {
-  border: thin solid blue;
   padding: 1rem;
   height: $header-height;
   h1 {
     display: inline-block;
     margin: 0;
     line-height: 1em;
+    font-family: sans-serif;
+    font-style: italic;
   }
 }
 
@@ -42,9 +50,43 @@ body {
     opacity: 1;
   }
 }
-
+.jpt-panel-button {
+  background: lighten($blue2, 15%);
+  height: 30px;
+  width: 30px;
+  font-size: 18px;
+  float: right;
+  color: $text-color;
+  position: relative;
+  z-index: 10;
+  &.closed {
+    top: -3rem;
+    &:before {
+      content: '>';
+    }
+  }
+  &.open {
+    position: absolute;
+    top: 0;
+    right: 0;
+    &:before {
+      content: 'x';
+    }
+  }
+}
 .jpt-menu-panel {
-  border: thin dotted lime;
+  min-height: 100px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  right: -100%;
+  transition: 0.5s;
+  opacity: 0;
+  background-color: $blue2;
+  &.open {
+    right: 0;
+    opacity: 1;
+  }
 }
   .jpt-menu-toggle{
     height: 30px;
@@ -58,7 +100,7 @@ body {
     .icon-bar{
         display: block;
         width: 35px;
-        height: 6px;
+        height: 5px;
         border-radius: 2px;
         background-color: $white;
         transition: all 0.3s;
@@ -89,3 +131,6 @@ body {
         }
     }
   }
+.jpt-menu-item {
+  min-height: 30px;
+}
