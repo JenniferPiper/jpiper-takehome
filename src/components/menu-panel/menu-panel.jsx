@@ -1,13 +1,13 @@
 import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
-import MenuItem from '../menu-item/menu-item.jsx';
+// import PropTypes from 'prop-types';
+// import MenuItem from '../menu-item/menu-item.jsx';
 
 class MenuPanel extends Component {
   constructor(props) {
     super(props);
     this.state = {
       panelOpen: false,
-      openClosed: 'closed',
+      panelClass: 'closed',
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -17,12 +17,12 @@ class MenuPanel extends Component {
     if (this.state.panelOpen) {
       this.setState({ 
         panelOpen: false,
-        openClosed: 'closed',
+        panelClass: 'closed',
       });
     } else {
       this.setState({ 
         panelOpen: true,
-        openClosed: 'open',
+        panelClass: 'open',
       });
     }
   }
@@ -31,10 +31,10 @@ class MenuPanel extends Component {
     return (
       <Fragment>
       <button
-      className={`jpt-panel-button ${this.state.openClosed}`}
+      className={`jpt-panel-button ${this.state.panelClass}`}
       onClick={this.handleClick}>
       </button>
-      <div className={`jpt-menu-panel ${this.state.openClosed}`}>MENU PANEL LEVEL 1
+      <div className={`jpt-menu-panel ${this.state.panelClass}`}>MENU PANEL LEVEL 1
       </div>
       </Fragment>
     );
