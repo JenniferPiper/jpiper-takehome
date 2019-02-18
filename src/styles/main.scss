@@ -1,13 +1,27 @@
+$header-height: 45px;
+$blue1: #0f4c74;
+$blue2: #3f82b7;
+$blue3: #5b96c4;
+$black: #000;
+$white: #fff;
+
 body {
   border: thin solid cyan;
+  position: relative;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
 
+#app {
+  background-color: $blue1;
+  color: $white;
+}
+
 .jpt-header {
   border: thin solid blue;
   padding: 1rem;
+  height: $header-height;
   h1 {
     display: inline-block;
     margin: 0;
@@ -16,7 +30,17 @@ body {
 }
 
 .jpt-menu {
-  border: thin solid magenta;
+  position: absolute;
+  margin-top: $header-height;
+  width: 100%;
+  left: -100%;
+  transition: 0.5s;
+  opacity: 0;
+  background-color: $blue3;
+  &.open { 
+    left: 0;
+    opacity: 1;
+  }
 }
 
 .jpt-menu-panel {
@@ -26,6 +50,7 @@ body {
     height: 30px;
     float: right;
     border: none;
+    background: none;
 
     &:focus {
         outline: none;
@@ -35,7 +60,7 @@ body {
         width: 35px;
         height: 6px;
         border-radius: 2px;
-        background-color: #000;
+        background-color: $white;
         transition: all 0.3s;
     }
     .top-bar {

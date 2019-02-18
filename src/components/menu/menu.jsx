@@ -13,7 +13,11 @@ class Menu extends Component {
         <MenuItem />
         </nav>;
     } else {
-      menuJSX = <nav className='jpt-menu closed'>MENU CLOSED</nav>;
+      menuJSX = <nav className='jpt-menu closed'>
+        <MenuItem />
+        <MenuItem />
+        <MenuItem />
+        </nav>;
     }
     return (
       <Fragment>
