@@ -4,6 +4,7 @@ import MenuPanel from '../menu-panel/menu-panel.jsx';
 
 class MenuItem extends Component {
   render() {
+    console.log('this.props.imgurl', this.props.imgurl);
     let panelJSX = '';
     if (this.props.submenu) {
       panelJSX = <MenuPanel 
@@ -17,7 +18,8 @@ class MenuItem extends Component {
       <li 
       className='jpt-menu-item'
       id={`menu-item-${this.props.id}`}>
-    <a href={this.props.url}>{this.props.text} Id: {this.props.id}</a>
+      <img src={this.props.imgurl} alt={this.props.text} />
+    <a href={this.props.url}>{this.props.text}</a>
     {panelJSX}
     </li>
     );
@@ -32,6 +34,7 @@ MenuItem.propTypes = {
   handlePanelClick: PropTypes.func,
   isActive: PropTypes.bool,
   submenu: PropTypes.array,
+  imgurl: PropTypes.string,
 };
 
 export default MenuItem;

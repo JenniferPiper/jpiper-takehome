@@ -67,7 +67,7 @@ class MenuPanel extends Component {
         return <li
           key={index}
           id={`menu-item-${item.id}`}>
-          {item.text} Id: {item.id}
+          <span>{item.text}</span>
           {submenuButtonJSX}
         </li>;
       });

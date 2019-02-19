@@ -2,9 +2,10 @@ import _ from 'lodash';
 
 const menuData = [
   {
-    text: 'Menu Item 0',
+    text: 'My Schedule & Bidding',
     url: '#',
     id: _.uniqueId(),
+    imgurl: '',
     submenu: [
       {
         text: 'Menu Item 0.1',
@@ -36,19 +37,22 @@ const menuData = [
     ],
   },
   {
-    text: 'Menu Item 1',
+    text: 'Safety',
     url: '#',
     id: _.uniqueId(),
+    imgurl: '',
   },
   {
-    text: 'Menu Item 2',
+    text: 'Training',
     url: '#',
     id: _.uniqueId(),
+    imgurl: '',
   },
   {
-    text: 'Menu Item 3',
+    text: 'Administration',
     url: '#',
     id: _.uniqueId(),
+    imgurl: '',
     submenu: [
       {
         text: 'Menu Item 3.1',
@@ -80,9 +84,34 @@ const menuData = [
     ],
   },
   {
-    text: 'Menu Item 4',
+    text: 'Catering & Brand',
     url: '#',
     id: _.uniqueId(),
+    imgurl: '',
+  },
+  {
+    text: 'Hotels',
+    url: '#',
+    id: _.uniqueId(),
+    imgurl: '',
+  },
+  {
+    text: 'My Base',
+    url: '#',
+    id: _.uniqueId(),
+    imgurl: '',
+  },
+  {
+    text: 'Recognition',
+    url: '#',
+    id: _.uniqueId(),
+    imgurl: '',
+  },
+  {
+    text: 'My Leadership Team',
+    url: '#',
+    id: _.uniqueId(),
+    imgurl: '',
   },
 ];
 
