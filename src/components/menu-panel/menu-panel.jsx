@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 // import MenuItem from '../menu-item/menu-item.jsx';
 
 class MenuPanel extends Component {
@@ -12,29 +12,37 @@ class MenuPanel extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(event) {
-    event.preventDefault();
-    if (this.state.panelOpen) {
-      this.setState({ 
-        panelOpen: false,
-        panelClass: 'closed',
-      });
-    } else {
-      this.setState({ 
-        panelOpen: true,
-        panelClass: 'open',
-      });
+  componentDidUpdate(prevProps) {
+    if (prevProps.isActive !== this.props.isActive) {
+      if (this.props.isActive) {
+        this.setState({
+          panelOpen: true,
+          panelClass: 'open',
+        });
+      } else {
+        this.setState({
+          panelOpen: false,
+          panelClass: 'closed',
+        });
+      }
     }
   }
+
+  handleClick(event) {
+    event.preventDefault();
+    this.props.handlePanelClick(event, this.props.isActive);
+  }
+
 
   render() {
     return (
       <Fragment>
-      <button
-      className={`jpt-panel-button ${this.state.panelClass}`}
-      onClick={this.handleClick}>
-      </button>
-      <div className={`jpt-menu-panel ${this.state.panelClass}`}>MENU PANEL LEVEL 1
+        <button
+          className={`jpt-panel-button ${this.state.panelClass}`}
+          id={this.props.id}
+          onClick={this.handleClick}>
+        </button>
+        <div className={`jpt-menu-panel ${this.state.panelClass}`}>MENU PANEL LEVEL 1
       </div>
       </Fragment>
     );
@@ -42,7 +50,9 @@ class MenuPanel extends Component {
 }
 
 MenuPanel.propTypes = {
-  // panelOpen: PropTypes.bool,
+  id: PropTypes.string,
+  handlePanelClick: PropTypes.func,
+  isActive: PropTypes.bool,
 };
 
 export default MenuPanel;
