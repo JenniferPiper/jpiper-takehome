@@ -35,6 +35,15 @@ class MenuPanel extends Component {
 
 
   render() {
+    let submenuItemsJSX;
+    if (this.props.submenu) {
+      submenuItemsJSX = this.props.submenu.map((item, index) => {
+        return <li key={index}>
+        ITEM
+        </li>;
+      });
+    }
+
     return (
       <Fragment>
         <button
@@ -42,7 +51,10 @@ class MenuPanel extends Component {
           id={this.props.id}
           onClick={this.handleClick}>
         </button>
-        <div className={`jpt-menu-panel ${this.state.panelClass}`}>MENU PANEL LEVEL 1
+        <div className={`jpt-menu-panel ${this.state.panelClass}`}>
+        <ul>
+          {submenuItemsJSX}
+        </ul>
       </div>
       </Fragment>
     );
@@ -53,6 +65,7 @@ MenuPanel.propTypes = {
   id: PropTypes.string,
   handlePanelClick: PropTypes.func,
   isActive: PropTypes.bool,
+  submenu: PropTypes.array,
 };
 
 export default MenuPanel;

@@ -12,11 +12,24 @@ body {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  font-family: sans-serif;
+  font-size: 18px;
 }
 
 #app {
   background-color: $blue1;
   color: $text-color;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  border-bottom: 1px solid;
+  padding: 1em;
 }
 
 a {
@@ -44,7 +57,7 @@ button {
 
 .jpt-menu {
   position: absolute;
-  margin-top: $header-height;
+  margin-top: $header-height / 2;
   width: 100%;
   left: -100%;
   transition: 0.5s;
@@ -138,5 +151,4 @@ button {
     }
   }
 .jpt-menu-item {
-  min-height: 30px;
 }

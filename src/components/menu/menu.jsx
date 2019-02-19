@@ -8,6 +8,18 @@ const menuData = [
     text: 'Menu Item 0',
     url: '#',
     id: _.uniqueId(),
+    submenu: [
+      {
+        text: 'Menu Item 0.1',
+        url: '#',
+        id: _.uniqueId(),
+      },
+      {
+        text: 'Menu Item 0.2',
+        url: '#',
+        id: _.uniqueId(),
+      },
+    ],
   },
   {
     text: 'Menu Item 1',
@@ -16,6 +28,16 @@ const menuData = [
   },
   {
     text: 'Menu Item 2',
+    url: '#',
+    id: _.uniqueId(),
+  },
+  {
+    text: 'Menu Item 3',
+    url: '#',
+    id: _.uniqueId(),
+  },
+  {
+    text: 'Menu Item 4',
     url: '#',
     id: _.uniqueId(),
   },
@@ -48,20 +70,29 @@ class Menu extends Component {
     }
     const menuItemsJSX = menuData.map((item) => {
       const isActive = this.state.activeItemId === item.id;
-      return <MenuItem 
-      key={item.id} 
-      text={item.text} 
-      url={item.url} 
-      id={item.id} 
-      isActive={isActive} 
-      handlePanelClick={this.handlePanelClick}
+      if (item.submenu) {
+        return <MenuItem
+          key={item.id}
+          text={item.text}
+          url={item.url}
+          id={item.id}
+          isActive={isActive}
+          handlePanelClick={this.handlePanelClick}
+          submenu={item.submenu}
+        />;
+      }
+      return <MenuItem
+        key={item.id}
+        text={item.text}
+        url={item.url}
+        id={item.id}
       />;
     });
     return (
-      <nav
-        className={menuClass}
-      >
-        {menuItemsJSX}
+      <nav className={menuClass}>
+        <ul>
+          {menuItemsJSX}
+        </ul>
       </nav>
     );
   }
