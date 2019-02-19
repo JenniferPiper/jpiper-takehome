@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import Greeting from '../greeting/greeting.jsx';
 import MenuItem from '../menu-item/menu-item.jsx';
 import menuData from '../../menu-data';
 
@@ -50,11 +51,14 @@ class Menu extends Component {
       />;
     });
     return (
-      <nav className={menuClass}>
+      <div className={menuClass}>
+        <Greeting />
+      <nav>
         <ul>
           {menuItemsJSX}
         </ul>
       </nav>
+      </div>
     );
   }
 }

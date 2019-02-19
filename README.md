@@ -23,3 +23,5 @@ I chose this starter kit because I have used it before with good results, and be
 * [Webpack dev serve](https://github.com/webpack/webpack-dev-server) 
 
 I removed the Prettier code formatter and CSS modules configuration because I don't wish to use them.
+
+Background Photo by Graham Page on Unsplash

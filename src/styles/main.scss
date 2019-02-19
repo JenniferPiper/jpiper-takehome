@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://use.fontawesome.com/releases/v5.7.2/css/all.css');
+
 $header-height: 45px;
 $blue1: #0f4c74;
 $blue2: #3f82b7;
@@ -11,7 +14,7 @@ body {
   position: relative;
   max-width: 600px;
   margin: 0 auto;
-  font-family: sans-serif;
+  font-family: Roboto, sans-serif;
   font-size: 18px;
 }
 
@@ -27,8 +30,8 @@ ul {
 
 li {
   list-style-type: none;
-  border-bottom: 1px solid;
-  padding: 1em;
+  border-bottom: 1px solid lighten($blue3, 10%);
+  padding: 1em 0 1em 1em;
 }
 
 a {
@@ -49,15 +52,26 @@ button {
   h1 {
     display: inline-block;
     margin: 0;
-    line-height: 1em;
-    font-family: sans-serif;
     font-style: italic;
   }
 }
 
+.jpt-breadcrumbs {
+  font-size: 0.8rem;
+  background-color: $blue2;
+  padding: 1rem;
+}
+.jpt-greeting {
+  background: url(../graham-page-1185645-unsplash.jpg) center/175%;
+  padding: 1rem;
+  height: 65px;
+  p {
+    margin: 0;
+  }
+}
 .jpt-menu {
   position: absolute;
-  margin-top: $header-height / 2;
+  margin-top: 19px;
   width: 100%;
   min-height: 100vh;
   left: -100%;
@@ -71,31 +85,37 @@ button {
 }
 .jpt-panel-button {
   background: lighten($blue2, 15%);
-  height: 30px;
-  width: 30px;
+  height: 57px;
+  width: 57px;
   font-size: 18px;
   float: right;
   color: $text-color;
   position: relative;
+  top: -18px;
   &.closed {
     z-index: 0;
     &:before {
-      content: '>';
+      font-family: "Font Awesome 5 Free"; 
+      font-weight: 900; 
+      content: "\f531";
     }
   }
   &.open {
     position: absolute;
-    top: 0;
+    top: 97px;
     right: 0;
     z-index: 10;
     &:before {
-      content: 'x';
+      font-family: "Font Awesome 5 Free"; 
+      font-weight: 900; 
+      content: "\f00d";
     }
+    
   }
 }
 .jpt-menu-panel {
   position: absolute;
-  top: 0;
+  top: 97px;;
   width: calc(100% - 3rem);
   min-height: 100vh;
   right: -100%;
@@ -109,7 +129,7 @@ button {
   }
 }
   .jpt-menu-toggle{
-    height: 30px;
+    height: 45px;
     float: right;
     border: none;
     background: none;
@@ -152,4 +172,20 @@ button {
     &.closed {
       display: none;
     }
+  }
+  .jpt-submenu-button {
+    &.closed {
+      &:after {
+        font-family: "Font Awesome 5 Free"; 
+        font-weight: 900; 
+        content: "\f078";
+      }
+    }
+    &.open {
+    &:after {
+      font-family: "Font Awesome 5 Free"; 
+      font-weight: 900; 
+      content: "\f077";
+    }
+  }
   }

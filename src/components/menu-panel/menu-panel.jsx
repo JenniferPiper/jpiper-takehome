@@ -49,12 +49,14 @@ class MenuPanel extends Component {
     if (this.props.submenu) {
       submenuItemsJSX = this.props.submenu.map((item, index) => {
         const submenuIsActive = this.state.activeItemId === item.id;
+        const submenuClass = submenuIsActive ? 'open' : 'closed';
         let submenuButtonJSX = '';
         if (item.submenu) {
           submenuButtonJSX = <Fragment><button
+            className = {`jpt-submenu-button ${submenuClass}`}
             onClick={this.handleSubmenuClick}
             id={item.id}
-            >v</button>
+            ></button>
             <SubmenuPanel
               id={item.id}
               handleSubmenuClick={this.handleSubmenuClick}
