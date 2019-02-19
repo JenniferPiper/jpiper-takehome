@@ -8,7 +8,7 @@
 ## Installation
 1- Clone the repo
 
-`git clone `
+`git clone https://github.com/jenwill/jpiper-takehome.git`
 
 2- `npm install` to install npm packages
 
