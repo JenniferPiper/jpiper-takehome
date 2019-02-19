@@ -48,6 +48,8 @@ I chose not to use Redux for this app because I saw no need for a central store 
 
 next steps / improvements:
   - make submenus close on click outside panel, or when parent menu is closed. Currently submenus may still be in open state when a menu is opened.
+  - second-level menu should display parent menu item at the top
+  - first-level menu item should highlight when its submenu is opened
   - testing: Jest, manual, cross-browser. There are some test files provided by the starter kit, but they have not been set up to work yet.
   - accessibility
   - refactor components to be more DRY. e.g., menu and menu-panel components could be refactored into a single component reusable with different props.
