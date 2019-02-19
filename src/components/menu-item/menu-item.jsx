@@ -14,7 +14,9 @@ class MenuItem extends Component {
       />; 
     } 
     return (
-      <li className='jpt-menu-item'>
+      <li 
+      className='jpt-menu-item'
+      id={`menu-item-${this.props.id}`}>
     <a href={this.props.url}>{this.props.text} Id: {this.props.id}</a>
     {panelJSX}
     </li>

@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-// import MenuItem from '../menu-item/menu-item.jsx';
+import SubmenuPanel from '../submenu-panel/submenu-panel.jsx';
 
 class MenuPanel extends Component {
   constructor(props) {
@@ -8,8 +8,10 @@ class MenuPanel extends Component {
     this.state = {
       panelOpen: false,
       panelClass: 'closed',
+      activeItemId: null,
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleSubmenuClick = this.handleSubmenuClick.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -33,13 +35,38 @@ class MenuPanel extends Component {
     this.props.handlePanelClick(event, this.props.isActive);
   }
 
+  handleSubmenuClick(event) {
+    event.preventDefault();
+    if (event.target.id === this.state.activeItemId) {
+      this.setState({ activeItemId: null });
+    } else {
+      this.setState({ activeItemId: event.target.id });
+    }
+  }
 
   render() {
-    let submenuItemsJSX;
+    let submenuItemsJSX = '';
     if (this.props.submenu) {
       submenuItemsJSX = this.props.submenu.map((item, index) => {
-        return <li key={index}>
-        ITEM
+        const submenuIsActive = this.state.activeItemId === item.id;
+        let submenuButtonJSX = '';
+        if (item.submenu) {
+          submenuButtonJSX = <Fragment><button
+            onClick={this.handleSubmenuClick}
+            id={item.id}
+            >v</button>
+            <SubmenuPanel
+              id={item.id}
+              handleSubmenuClick={this.handleSubmenuClick}
+              submenuIsActive={submenuIsActive}
+              submenu={item.submenu} />
+          </Fragment>;
+        }
+        return <li
+          key={index}
+          id={`menu-item-${item.id}`}>
+          {item.text} Id: {item.id}
+          {submenuButtonJSX}
         </li>;
       });
     }
@@ -52,10 +79,10 @@ class MenuPanel extends Component {
           onClick={this.handleClick}>
         </button>
         <div className={`jpt-menu-panel ${this.state.panelClass}`}>
-        <ul>
-          {submenuItemsJSX}
-        </ul>
-      </div>
+          <ul>
+            {submenuItemsJSX}
+          </ul>
+        </div>
       </Fragment>
     );
   }

@@ -1,47 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
-import MenuItem from '../menu-item/menu-item.jsx';
 
-const menuData = [
-  {
-    text: 'Menu Item 0',
-    url: '#',
-    id: _.uniqueId(),
-    submenu: [
-      {
-        text: 'Menu Item 0.1',
-        url: '#',
-        id: _.uniqueId(),
-      },
-      {
-        text: 'Menu Item 0.2',
-        url: '#',
-        id: _.uniqueId(),
-      },
-    ],
-  },
-  {
-    text: 'Menu Item 1',
-    url: '#',
-    id: _.uniqueId(),
-  },
-  {
-    text: 'Menu Item 2',
-    url: '#',
-    id: _.uniqueId(),
-  },
-  {
-    text: 'Menu Item 3',
-    url: '#',
-    id: _.uniqueId(),
-  },
-  {
-    text: 'Menu Item 4',
-    url: '#',
-    id: _.uniqueId(),
-  },
-];
+import MenuItem from '../menu-item/menu-item.jsx';
+import menuData from '../../menu-data';
 
 class Menu extends Component {
   constructor(props) {

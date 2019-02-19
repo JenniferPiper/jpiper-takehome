@@ -41,6 +41,7 @@ button {
   background: none;
   border: none;
   outline: none;
+  color: $text-color;
 }
 
 .jpt-header {
@@ -59,6 +60,7 @@ button {
   position: absolute;
   margin-top: $header-height / 2;
   width: 100%;
+  min-height: 100vh;
   left: -100%;
   transition: 0.5s;
   opacity: 0;
@@ -93,10 +95,10 @@ button {
   }
 }
 .jpt-menu-panel {
-  min-height: 100px;
   position: absolute;
   top: 0;
-  width: 100%;
+  width: calc(100% - 3rem);
+  min-height: 100vh;
   right: -100%;
   transition: 0.5s;
   opacity: 0;
@@ -150,5 +152,8 @@ button {
         }
     }
   }
-.jpt-menu-item {
-}
+  .jpt-submenu-panel{
+    &.closed {
+      display: none;
+    }
+  }
