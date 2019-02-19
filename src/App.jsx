@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { hot } from 'react-hot-loader';
-import HelloWorld from './components/hello-world/index.jsx';
+import Header from './components/header/header.jsx';
+import Breadcrumbs from './components/breadcrumbs/breadcrumbs.jsx';
+import './styles/main.scss';
 
 class App extends Component {
   constructor(props) {
@@ -9,7 +11,12 @@ class App extends Component {
   }
 
   render() {
-    return <HelloWorld title="Hello from React webpack" />;
+    return (
+    <Fragment>
+    <Header title="J. Piper" />
+    <Breadcrumbs />
+    </Fragment>
+    );
   }
 }
 
