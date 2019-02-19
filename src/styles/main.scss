@@ -10,8 +10,7 @@ $text-color: $white;
 body {
   position: relative;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   font-family: sans-serif;
   font-size: 18px;
 }
@@ -124,28 +123,25 @@ button {
         height: 5px;
         border-radius: 2px;
         background-color: $white;
-        transition: all 0.3s;
+        transition: all 0.5s;
     }
     .top-bar {
-        margin-bottom: 4px;
-        transform: rotate(45deg);
-        transform-origin: 20% 50%;
-        transform-origin: 0 85%;
+      margin-bottom: 4px;
+      transform: translateY(9px) rotate(225deg);
     }
     .middle-bar {                 
-        margin-bottom: 4px;
-        opacity: 0;
+      margin-bottom: 4px;
+      opacity: 0;
     }
     .bottom-bar {
-        transform: rotate(-45deg);
-        transform-origin: 20% 50%;
+        transform: translateY(-9px) rotate(135deg);
     }
     &.closed{
         .top-bar {
-            transform: rotate(0);
+            transform: translateY(0) rotate(0);
         }
         .middle-bar {
-            opacity: 1;
+          opacity: 1;
         }
         .bottom-bar {
             transform: rotate(0);
