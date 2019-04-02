@@ -2,7 +2,7 @@ import React from 'react';
 
 const Greeting = () => (
   <div className='jpt-greeting'>
-  <p>Hello IndigoSlate</p></div>
+  <p>Hello Jane Q. Accountholder</p></div>
 );
 
 
